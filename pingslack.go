@@ -91,6 +91,7 @@ func notify(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Send the notification
 	if err = post(data); err != nil {
 		fmt.Printf("error sending payload: %s\n", err)
 		respond(w, 500, err.Error())
