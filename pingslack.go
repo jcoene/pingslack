@@ -73,6 +73,9 @@ func main() {
 	slackHookUrl = "https://" + slackDomain + "/services/hooks/incoming-webhook?token=" + slackToken
 
 	http.HandleFunc("/notify", func(w http.ResponseWriter, r *http.Request) {
+
+		log.Printf("received from pingdom: %+v", r.URL.RawQuery)
+
 		msg := &Message{}
 		if err := json.Unmarshal([]byte(r.URL.Query().Get("message")), msg); err != nil {
 			respond(w, 500, map[string]string{"error": err.Error()})
