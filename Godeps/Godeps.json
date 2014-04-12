@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/jcoene/pingslack",
+	"GoVersion": "go1.2",
+	"Deps": []
+}
